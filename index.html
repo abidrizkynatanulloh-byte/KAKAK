@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY BIRTHDAY</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <style>
+    /* Efek tombol klik seolah-olah memanggil */
+    .pulse-button {
+      animation: pulse 1.5s infinite;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6; }
+      50% { transform: scale(1.1); box-shadow: 0 0 20px #3b82f6, 0 0 30px #3b82f6; }
+      100% { transform: scale(1); box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6; }
+    }
+
+    /* Efek teks seperti sedang diketik */
+    .typing {
+      width: 0;
+      white-space: wrap;
+      overflow: hidden;
+      border-right: 3px solid #333;
+      display: inline-block;
+      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body 
+  style="background-image: url(https://i.pinimg.com/1200x/c6/b6/98/c6b698b6b4b5864576849b1005e3e63e.jpg);"
+  class="flex justify-center h-screen items-center"
+>
+  <div  
+    class="bg-white border px-10 py-8 border-gray-300 shadow-lg shadow-blue-600 rounded-4xl text-center animate__animated animate__backInDown m-8 x-80 " 
+    id="kartu"
+  >
+    <h1 
+      class="text-3xl font-bold text-blue-400 animate__animated animate__rubberBand animate__infinite"
+    >🎂HAPPY BIRTHDAY🎂</h1>
+        <h1 
+      class="text-3xl font-bold text-blue-400 animate__animated animate__rubberBand animate__infinite "
+    >🎉🎉kak ratehhh🎉🎉</h1>
+
+    <button
+      class="pulse-button p-2 bg-blue-500 border-gray-300 shadow-lg shadow-blue-600 rounded-4xl text-center text-white mt-4"
+      onclick="ubahkartu()"
+    >KLIK  DISINI KAK</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 5000,
+      spread: 1000,
+      origin: { y: 0.6 },
+    });
+
+    let kartu = document.getElementById("kartu");
+    let halamanIndex = 0;
+
+    const halaman = [
+      `
+        <div class="flex flex-col items-center gap-4 p-4 ">
+          <h1 class="typing text-2xl font-bold text-center">🎂🎊 CIE ULANG TAHUN KE- 19🎂🎊</h1>
+          <img src="gambar/IMG-20251001-WA0011.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4 ">
+          <h1 class="typing text-2xl font-bold text-center">🎉 Selamat ulang tahun untuk kakak ponakanku tersayang! 🎉✨
+🎉</h1>
+          <img src="gambar/IMG-20251001-WA0012.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4">
+          <h1 class="typing text-2xl font-bold text-center text-warp">💖 Hari ini adalah hari spesialmu, hari di mana kamu dilahirkan dan membawa begitu banyak kebahagiaan untuk keluarga. Semakin bertambahnya usiamu, semoga semakin banyak pula kebaikan, rezeki, kebahagiaan, dan cinta yang datang menghampirimu.💖</h1>
+          <img src="gambar/IMG-20251001-WA0013.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4 text-warp">
+          <h1 class="typing text-2xl font-bold text-center">Kamu adalah sosok yang istimewa, penuh semangat, dan selalu jadi kebanggaan keluarga. Aku berdoa semoga setiap langkahmu selalu diberkahi, setiap impianmu dimudahkan untuk tercapai, dan setiap harimu selalu dipenuhi tawa, senyum, serta orang-orang yang tulus menyayangimu.🤗</h1>
+          <img src="gambar/IMG-20251001-WA0014.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4 text-warp">
+          <h1 class="typing text-2xl font-bold text-center text-warp" text-warp>Jangan pernah ragu untuk bermimpi besar, karena aku yakin kamu punya kemampuan untuk mewujudkannya. Semoga Allah selalu melindungimu, memberikan kesehatan, panjang umur, serta kebahagiaan yang tiada henti. 📚</h1>
+          <img src="gambar/IMG-20251001-WA0015.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4 ">
+          <h1 class="typing text-2xl font-bold text-center text-warp ">🌸 Nikmati setiap momen dalam hidupmu, jangan lupa untuk terus bersyukur atas apa yang sudah kamu raih, dan tetaplah menjadi pribadi yang rendah hati serta penuh kasih sayang.</h1>
+          <img src="gambar/IMG-20251001-WA0016.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4  ">
+          <h1 class="typing text-2xl font-bold text-cente text-warp ">🕊️ SEMOGAAA CITA CITA KAKAK TERCAPAIII, REZEKII KAKA LANCARRRR, SEHATT SELALUUU, NAKAL E BEERKURANGGG, TAMBAH PINTERRRR OKEYYYYY ❤❤❤🕊️</h1>
+          <img src="gambar/IMG-20251001-WA0017.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `,
+      `
+        <div class="flex flex-col items-center gap-4 p-4  ">
+          <h1 class="typing text-xl font-bold text-center text-warp ">🩵 Selamat ulang tahun sekali lagi, kakak ponakanku tercinta 💖 Semoga hari ini menjadi awal dari babak baru yang lebih indah dan penuh warna. Love you always! 🥰🎂🎁🩵</h1>
+          <img src="gambar/IMG-20251001-WA0018.jpg" class="w-40 h-40 object-contain"/>
+        </div>
+      `
+    ];
+
+    function renderHalaman() {
+      kartu.innerHTML = `
+        ${halaman[halamanIndex]}
+        <div class="flex justify-between w-full max-w-sm mt-4">
+          ${halamanIndex > 0 
+            ? `<button id="backBtn" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow">⬅ Kembali</button>` 
+            : `<span></span>`}
+          ${halamanIndex < halaman.length - 1 
+            ? `<button id="nextBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow">Next ➡</button>` 
+            : `<span></span>`}
+        </div>
+      `;
+
+      if (halamanIndex < halaman.length - 1) {
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          halamanIndex++;
+          confetti({ particleCount: 1000, spread: 580, origin: { y: 0.6 } });
+          renderHalaman();
+        });
+      }
+
+      if (halamanIndex > 0) {
+        document.getElementById("backBtn").addEventListener("click", () => {
+          halamanIndex--;
+          renderHalaman();
+        });
+      }
+    }
+
+    function ubahkartu() {
+      halamanIndex = 0;
+      renderHalaman();
+    }
+  </script>
+</body>
+</html>
